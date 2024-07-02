@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Image" class="logo-img" loading="lazy">
+            <h1>HDS</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html" class="nav-link active ">Home</a></li>
+                <li><a href="about-us.html" class="nav-link">About Us</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="research.html" class="nav-link">Research</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fa-regular fa-user"></i></a>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('open');
+        }
+    </script>
+
+    <div class="container">
+        <div class="text-content">
+            <h1><span>H</span>ydro<span>D</span>isasters <span>S</span>olutions</h1>
+            <p>Our Main Objectives Is Providing A Solid And Advanced Solutions Helping Clients Achieve Their Goal Based On Sustainability Management</p>
+            <div class="search">
+                <input type="text" placeholder="Search here...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="image-content">
+            <img src="images/logo_v2.jpg" alt="Company logo" loading="lazy">
+        </div>
+    </div>
+
+    <section class="about-section fade-in-section ">
+        <div class="image-about-us">
+            <img src="images/about-us.jpg" alt=" About Us" loading="lazy">
+        </div>
+        <div class="about-us">
+            <h2>Let's Talk <span>About Us</span></h2>
+            <p>HydroDisaster Solutions (HDS) is a Leading Company in The field of disasters regarding the environmental and hydrological issues over the worlds. We providing detailed and comprehensive solutions for all water-related Disasters such as Flood Disasters, Landslides, Water quality, Sedimentations problems, Land subsidence, River system Degradation, Ecological Changes, and Ecosystems diversity, Sea water intrusion. Additionally, we are always using the new advanced techniques and approaches for our services, Such as Unmanned drone observation, Remote sensing Techniques, Satellite based data, In addition to Hydrological and hydraulic Models for Flood forecasting and Hazard mapping considering the climate changes impacts. Also, Transfer knowledge (Science, engineering, and technology) by export or import activities.</p>
+            <a href="about-us.html" class="btn">Read More</a>
+            
+        </div>
+    </section>
+
+    <section class="training fade-in-section">
+        <div class="training-container ">
+            <h1>Training</h1>
+            <br>
+            
+            <p>HDS provides specialized training services tailored to address water-related disasters. Our programs focus on GIS and Remote Sensing for flood and drought management. We offer programming courses in Fortran and Python to develop resilient water management applications. Technical training in Japanese technologies enhances flood control capabilities. Hydrological modeling courses enable effective disaster risk assessment. With AI training, we integrate advanced analytics for optimized response strategies. These efforts equip individuals and organizations to adapt and respond efficiently to water-related disasters, promoting safety and sustainability.</p>
+            <div class="train">
+                <div class="Train-item" id="jee-preparation">GIS and Remote Sensing Training</div>
+                <div class="Train-item" id="gate-preparation">Technical Training for Japanese Technologies</div>
+                <div class="Train-item" id="sample-papers">Hydrological Modeling Applications</div>
+                <div class="Train-item" id="daily-quiz">Artificial Intelligence training and support</div>
+                <div class="Train-item" id="data-structures">Programming Tools such as Fortran and Python</div>
+            </div>
+        </div>
+    </section>
+<section>
+    <div class="services-section fade-in-section">
+        <h1>Consultancy Services</h1>
+        <p>Hydro-Disaster Solutions (HDS) is motivated by the urgent need to address the increasing frequency and severity of environmental and hydrological disasters worldwide. By offering specialized consultancy services in flood disaster and water management, groundwater quality, sea water intrusion, dam reservoir and sedimentation issues, landslides, subsidence, and infrastructure planning, HDS aims to mitigate the devastating impacts of these events. Utilizing advanced technologies and scientific expertise, the company is dedicated to developing resilient, sustainable solutions that protect communities, preserve ecosystems, and enhance global disaster preparedness and response.</p>
+        <br>
+        <br>
+        <div class="grid-container">
+            <div class="card">
+                <img src="images/flood.jpg" alt="Flood Disasters and Water Management" loading="lazy">
+                <h3>Flood Disasters and Water Management</h3>
+            </div>
+            <div class="card">
+                <img src="images/water.jpg" alt="Groundwater Quality and Sea Water Intrusion" loading="lazy">
+                <h3>Groundwater Quality and Sea Water Intrusion</h3>
+    
+            </div>
+            <div class="card">
+                <img src="images/dam.jpg" alt="Dam reservoir and Sedimentation problems" loading="lazy">
+                <h3>Dam reservoir and Sedimentation problems.
+                </h3>
+                
+            </div>
+            <div class="card">
+                <img src="images/design.jpg" alt="Designing plans for Dam constructions and road planninge" loading="lazy">
+                <h3>Designing plans for Dam constructions and road planninge</h3>
+                
+            </div>
+        </div>
+       
+    </div>
+    </section>
+    <div class="ad-banner fade-in-section">
+        <a href="#" target="_blank"><img src="images/train1.jpg" alt="img1" loading="lazy"></a>
+        <a href="#" target="_blank"><img src="images/train2.jpg" alt="img 2" loading="lazy"></a>
+        <a href="#" target="_blank"><img src="images/train4.jpg" alt="img 3" loading="lazy"></a>
+        <a href="#" target="_blank"><img src="images/train5.jpg" alt="img 4" loading="lazy"></a>
+        <a href="#" target="_blank"><img src="images/train6.jpg" alt="img 4" loading="lazy"></a>
+        <a href="#" target="_blank"><img src="images/train7.jpg" alt="img 4" loading="lazy"></a>
+    </div>
+   
+    <footer>
+        <div class="footer-container" id="contact">
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">About</a>
+                <a href="#">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Help</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Horreya Street<br>Alex, PA57689<br>Japan</p>
+                <p>+12408687</p>
+                <p>hydrodisaster@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2023 HDS. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js">
+       
+    // Function to set the active link based on current URL
+    function setActiveLink() {
+        const links = document.querySelectorAll('.nav-link');
+        const currentPath = window.location.pathname.split('/').pop();
+
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Call the function when the document loads
+    document.addEventListener('DOMContentLoaded', setActiveLink);
+</script>
+
+  
+</body>
+</html>
