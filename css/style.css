@@ -9,20 +9,21 @@ body {
 header {
     position: fixed;
     top: 0;
-    z-index: 1000; /* لضمان أن يكون الهيدر فوق باقي المحتوى */
+    z-index: 1000;
     display: flex;
     align-items: center;
-    background-color: #fff;
     justify-content: space-between;
     padding: 10px 50px;
     flex-wrap: wrap;
+    width: 100%;
+    background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%; 
 }
 
 .logo {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 .logo-img {
@@ -40,7 +41,7 @@ header {
 
 nav {
     display: flex;
-    margin: 10px;
+    margin: 0 auto;
 }
 
 nav ul {
@@ -61,8 +62,8 @@ nav ul li a {
     transition: color 0.3s;
 }
 
-nav ul li a:hover, .footer-column a:hover {
-    color: #ffa500; /* Darker shade for better visibility */
+nav ul li a:hover, .footer-column a:hover, .header-icons a:hover {
+    color: #ffa500;
 }
 
 nav ul li a::after {
@@ -80,46 +81,15 @@ nav ul li a::after {
 nav ul li a:hover::after {
     width: 100%;
 }
+
 nav ul li a.active {
-    color: #ffa500; /* Yellow color for the active state */
-}
-
-
-.header-icons {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* مسافة بين الأيقونات */
-
-}
-
-.header-icons a {
-    color: #333;
-    font-size: 1.5em;
-    margin-left: 40px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.header-icons a:hover {
     color: #ffa500;
-}
-
-.header-icons i {
-    margin-right: 10px; /* Space between icons */
 }
 
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px;
-    transition: 0.4s;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -132,6 +102,14 @@ nav ul li a.active {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px;
+    transition: 0.4s;
 }
 
 /* General Transitions for Hover Effects */
@@ -150,11 +128,12 @@ a, button, .Train-item {
 }
 
 /* Hover and Focus Effects */
-.btn, .Train-item:hover, .service:hover, .header-icons a:hover {
+.btn, .Train-item:hover, .service:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
     header {
         padding: 5px 20px;
@@ -189,20 +168,18 @@ a, button, .Train-item {
     }
 
     .header-icons {
-        margin-top: 10px; /* Space between navigation and icons */
+        margin-top: 10px;
     }
 
     .hamburger {
         display: flex;
-        flex-direction: column;
-        cursor: pointer;
         margin-right: auto;
     }
 }
 
 @media (max-width: 480px) {
     header {
-        padding: 10px 10px;
+        padding: 10px;
     }
 
     .hamburger {
@@ -210,7 +187,7 @@ a, button, .Train-item {
     }
 }
 
-
+/* Home section style*/
 .search {
     display: flex;
     align-items: center;
@@ -231,21 +208,34 @@ a, button, .Train-item {
     cursor: pointer;
     border-radius: 4px;
     margin-left: 2px;
- 
 }
 
 .container {
     display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 60px;
     max-width: 1250px;
-    margin-left: 20px;
+    margin: 10px auto 0; /* Top margin 10px to distance from header */
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Horizontal layout on larger screens */
+        justify-content: space-between;
+    }
 }
 
 .text-content {
-    max-width: 50%;
-    margin-left: 20px;
+    width: 100%; /* Full width on mobile */
+    margin: 20px; /* Consistent spacing around the text */
+}
+
+@media (min-width: 768px) {
+    .text-content {
+        max-width: 50%; /* Half width on larger screens */
+    }
 }
 
 .text-content h1 {
@@ -267,6 +257,12 @@ a, button, .Train-item {
 .image-content img {
     max-width: 100%;
     height: auto;
+}
+
+@media (min-width: 768px) {
+    .image-content {
+        max-width: 50%; /* Half width on larger screens */
+    }
 }
 
 /* About section styles */
@@ -358,13 +354,12 @@ a, button, .Train-item {
         margin-bottom: 20px;
     }
 }
-
-/* Training section styles */
+/* Training Section Style */
 .training {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 110vh;
+    height: auto; /* Change from fixed height to auto */
     max-width: 1240px;
     margin: 20px auto;
     padding: 20px;
@@ -375,21 +370,23 @@ a, button, .Train-item {
     background-blend-mode: overlay;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Prevents any child elements from overflowing */
 }
 
 .training-container {
     text-align: center;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* Additional layer to enhance text readability */
-    font-weight: bold;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Enhances text readability */
+    box-sizing: border-box; /* Includes padding in width calculation */
 }
 
 .training-container h1 {
     margin-bottom: 20px;
     text-align: center;
     color: #ffa500;
-    font-size:xx-large;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 }
 
@@ -398,7 +395,6 @@ a, button, .Train-item {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    
 }
 
 .Train-item {
@@ -407,7 +403,7 @@ a, button, .Train-item {
     padding: 15px 25px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added transform to transitions */
-    margin: 10px 10px;
+    margin: 10px;
 }
 
 .Train-item:hover,
@@ -417,26 +413,35 @@ a, button, .Train-item {
     transform: scale(1.05); /* Scale effect on hover */
 }
 
-/* Responsive design settings */
+/* Responsive design adjustments */
 @media (max-width: 600px) {
+    .train {
+        flex-direction: column;
+    }
+
     .Train-item {
-        flex: 1 1 100%;
+        width: 100%; /* Full width on small screens */
+        margin: 5px 0; /* Reduced margin for compact layout */
+    }
+
+    .training-container {
+        padding: 10px; /* Less padding on smaller screens */
     }
 }
 
 @media (min-width: 601px) and (max-width: 1200px) {
     .Train-item {
-        flex: 1 1 45%;
+        flex: 1 1 45%; /* Adjusting to two columns on mid-sized devices */
     }
 }
 
 @media (min-width: 1201px) {
     .Train-item {
-        flex: 1 1 20%;
+        flex: 1 1 30%; /* Spacious three-column layout on large screens */
     }
 }
 
-/* Services section styles */
+
 /* Services section styles */
 .services-section {
     text-align: center;
